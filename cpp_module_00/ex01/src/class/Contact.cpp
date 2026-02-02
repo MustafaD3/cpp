@@ -18,7 +18,8 @@ void Contact::setField(std::string &field, std::string fieldName)
 		if(std::cin.eof())
 		{
 			std::cout << "You Pressed ^D Exiting" << std::endl;
-			std::exit(0);
+			this->isEmpty = -1;
+			return;
 		}
 		if(field.size() > 0)
 		{
@@ -33,13 +34,13 @@ void Contact::setField(std::string &field, std::string fieldName)
 }
 void Contact::setFields()
 {
-	this->setField(this->firstName, "Firstname");
+	this->setField(this->firstname, "Firstname");
 	if(this->isEmpty)
 		return;
-	this->setField(this->lastName, "Lastname");
+	this->setField(this->lastname, "Lastname");
 	if(this->isEmpty)
 		return;
-	this->setField(this->nickName, "Nickname");
+	this->setField(this->nickname, "Nickname");
 	if(this->isEmpty)
 		return;
 	this->setField(this->number, "Phone Number");
@@ -48,4 +49,24 @@ void Contact::setFields()
 	this->setField(this->darkestSecret, "Darkest Secret");
 	if(this->isEmpty)
 		return;
+}
+std::string Contact::getfirstname()
+{
+	return this->firstname;
+}
+std::string Contact::getlastname()
+{
+	return this->lastname;
+}
+std::string Contact::getNickname()
+{
+	return this->nickname;
+}
+std::string Contact::getNumber()
+{
+	return this->number;
+}
+std::string Contact::getDarkest()
+{
+	return this->darkestSecret;
 }
