@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkilic344@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mdalkili <mdalkili@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 22:05:58 by mdalkili          #+#    #+#             */
-/*   Updated: 2025/09/19 22:05:58 by mdalkili         ###   ########.fr       */
+/*   Updated: 2026/02/04 00:29:54 by mdalkili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "src/Zombie.hpp"
 int main(){
-	int number = 15;
+	int number = 5;
 	Zombie* horde = zombieHorde(number,"Zombie");
 	if(!horde)
 		return(EXIT_FAILURE);

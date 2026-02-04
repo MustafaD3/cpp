@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkilic344@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mdalkili <mdalkili@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 22:06:17 by mdalkili          #+#    #+#             */
-/*   Updated: 2025/09/19 22:06:17 by mdalkili         ###   ########.fr       */
+/*   Updated: 2026/02/04 00:19:54 by mdalkili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Zombie{
 		std::string _name;
 	public:
 		Zombie(std::string name);
+		~Zombie();
 		void announce( void );
 };
 Zombie* newZombie( std::string name );

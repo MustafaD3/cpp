@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkilic344@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mdalkili <mdalkili@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 22:05:39 by mdalkili          #+#    #+#             */
-/*   Updated: 2025/09/19 22:05:39 by mdalkili         ###   ########.fr       */
+/*   Updated: 2026/02/04 01:45:18 by mdalkili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class HumanA{
 		std::string name;
 	public:
 		HumanA(const std::string n, Weapon& g);
-		~HumanA();
 		void attack();
-		void setWeapon(Weapon& g);
 };
 #endif

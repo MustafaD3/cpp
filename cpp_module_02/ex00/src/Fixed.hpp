@@ -7,7 +7,7 @@ class Fixed{
 		static const int fixedPointNumberBits;
 	public:
 		Fixed();
-		Fixed(Fixed &copyObj);
+		Fixed(const Fixed &copyObj);
 		Fixed &operator=(const Fixed &src);
 		~Fixed();
 		int getRawBits( void ) const;

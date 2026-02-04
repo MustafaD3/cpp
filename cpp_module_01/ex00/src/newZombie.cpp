@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkilic344@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mdalkili <mdalkili@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 22:06:23 by mdalkili          #+#    #+#             */
-/*   Updated: 2025/09/19 22:06:23 by mdalkili         ###   ########.fr       */
+/*   Updated: 2026/02/04 00:18:02 by mdalkili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 Zombie* newZombie( std::string name ){
 	Zombie* heapZombie = new Zombie(name);
-	heapZombie->announce();
 	return heapZombie;
 }

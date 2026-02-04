@@ -8,13 +8,13 @@ Fixed::Fixed(){
 }
 Fixed::Fixed(const Fixed &copyObj){
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixedPointNumber = copyObj.fixedPointNumber;
+	*this = copyObj;
 }
 Fixed &Fixed::operator=(const Fixed &src)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
     if (this != &src)
-        this->fixedPointNumber = src.fixedPointNumber;
+        this->setRawBits(src.getRawBits());
 	return *this;
 }
 Fixed::~Fixed(){

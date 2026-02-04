@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkilic344@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mdalkili <mdalkili@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 22:05:29 by mdalkili          #+#    #+#             */
-/*   Updated: 2025/09/19 22:05:29 by mdalkili         ###   ########.fr       */
+/*   Updated: 2026/02/04 02:03:11 by mdalkili         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 #include <fstream>
 int replaceInFile(const std::string& filename, const std::string& search, const std::string& replace)
 {
+	if(search.empty())
+		return (std::cerr << "Search string is empty" << std::endl, 1);
 	std::ifstream inFile(filename.c_str());
+	if (!inFile)
+        return (std::cout << "File can't be opened!" << std::endl, 1);
     std::ofstream outFile("temp.txt");
+	if (!outFile)
+        return (std::cout << "Output file can't be created!" << std::endl, 1);
     std::string line;
 
-    if (!inFile.is_open() || !outFile.is_open()) {
-        std::cerr << "Dosya açılamadı!" << std::endl;
-		std::remove("temp.txt");
-        return 1;
-    }
     while (std::getline(inFile, line)) {
         std::string result;
         size_t pos = 0, prev = 0;
@@ -36,8 +37,6 @@ int replaceInFile(const std::string& filename, const std::string& search, const 
     }
     inFile.close();
     outFile.close();
-    std::remove(filename.c_str());
-    std::rename("temp.txt", filename.c_str());
 	return 0;
 }
 int main(int ac,char **argv){
