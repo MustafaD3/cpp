@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkilic344@student.42.fr>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 22:05:20 by mdalkili          #+#    #+#             */
-/*   Updated: 2025/09/19 22:05:21 by mdalkili         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Harl.hpp"
 Harl::Harl(void){}
 Harl::~Harl(void){}
@@ -41,16 +29,17 @@ void Harl::error(void)
 }
 void Harl::complain(std::string level)
 {
-	typedef void (Harl::*FuncPtr)();
-	std::pair<std::string, FuncPtr> table[4] = {
-		std::make_pair("DEBUG", &Harl::debug),
-		std::make_pair("INFO", &Harl::info),
-		std::make_pair("WARNING", &Harl::warning),
-		std::make_pair("ERROR", &Harl::error)
-	};
-	for(int i = 0; i < 4;i++)
-	{
-		if(level == table[i].first)
-			(this->*table[i].second)();
-	}
+	 void (Harl::*funcPtr[4])() = {
+        &Harl::debug,
+        &Harl::info,
+        &Harl::warning,
+        &Harl::error
+    };
+    std::string funcarray[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int size = sizeof(funcarray) / sizeof(funcarray[0]);
+    for (int i=0; i < size; i++)
+    {
+        if (funcarray[i] == level)
+            (this->*funcPtr[i])();
+    }
 }

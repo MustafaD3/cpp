@@ -1,27 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mdalkili <mdalkili@student.42istanbul.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 22:05:29 by mdalkili          #+#    #+#             */
-/*   Updated: 2026/02/04 02:03:11 by mdalkili         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <fstream>
+#include <string>
 int replaceInFile(const std::string& filename, const std::string& search, const std::string& replace)
 {
 	if(search.empty())
 		return (std::cerr << "Search string is empty" << std::endl, 1);
 	std::ifstream inFile(filename.c_str());
-	if (!inFile)
-        return (std::cout << "File can't be opened!" << std::endl, 1);
-    std::ofstream outFile("temp.txt");
+	std::string outFileName = std::string(filename) + ".replace";
+	std::ofstream outFile(outFileName.c_str());
 	if (!outFile)
-        return (std::cout << "Output file can't be created!" << std::endl, 1);
+        return (std::cerr << "Output file can't be created!" << std::endl, 1);
     std::string line;
 
     while (std::getline(inFile, line)) {
