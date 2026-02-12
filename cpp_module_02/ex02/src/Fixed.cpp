@@ -3,37 +3,30 @@
 const int Fixed::fixedPointNumberBits = 8;
 
 Fixed::Fixed(){
-	std::cout << "Default constructor called" << std::endl;
 	this->fixedPointNumber = 0;
 }
 Fixed::Fixed(const Fixed &copyObj){
-	std::cout << "Copy constructor called" << std::endl;
 	*this = copyObj;
 }
 Fixed &Fixed::operator=(const Fixed &src)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
     if (this != &src)
         this->setRawBits(src.getRawBits());
 	return *this;
 }
 Fixed::~Fixed(){
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const int input)
 {
-	std::cout << "Int Constructor called" << std::endl;
 	this->fixedPointNumber = input << this->fixedPointNumberBits;
 }
 Fixed::Fixed(const float input)
 {
-	std::cout << "Float Constructor called" << std::endl;
 	this->fixedPointNumber = roundf(input * (1 << this->fixedPointNumberBits));
 }
 
 int Fixed::getRawBits( void ) const{
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->fixedPointNumber;
 }
 void Fixed::setRawBits(int const raw)

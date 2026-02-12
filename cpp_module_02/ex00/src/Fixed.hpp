@@ -10,6 +10,7 @@ class Fixed{
 		Fixed(const Fixed &copyObj);
 		Fixed &operator=(const Fixed &src);
 		~Fixed();
+		
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };
