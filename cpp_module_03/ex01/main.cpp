@@ -1,18 +1,20 @@
 #include "./src/ClapTrap.hpp"
 #include "./src/ScavTrap.hpp"
 int main(){
-	ClapTrap trap("trap");
-	ClapTrap target("target");
-	trap.attack(target.getName());
-	trap.attack(target.getName());
-	trap.attack(target.getName());
-	target.takeDamage(1);
-	target.takeDamage(1);
-	target.takeDamage(1);
+	ScavTrap *trap = new ScavTrap();
+	ScavTrap target("target");
+	ScavTrap newTarget("kamil");
+	target = newTarget;
+	trap->guardGate();
+	trap->attack(target.getName());
+	trap->attack(target.getName());
+	target.takeDamage(trap->getAttackDamage());
+	target.takeDamage(trap->getAttackDamage());
 	std::cout << "Target Hitpoint :" <<  target.getHitPoints() << std::endl;
-	target.beRepaired(1);
-	target.beRepaired(1);
-	target.beRepaired(1);
-	target.beRepaired(1);
+	target.beRepaired(trap->getAttackDamage());
+	std::cout << "Target Hitpoint :" <<  target.getHitPoints() << std::endl;
+	target.beRepaired(trap->getAttackDamage());
 	std::cout << "Target Hitpoint :" << target.getHitPoints() << std::endl;
+	delete trap;
+	return 0;
 }

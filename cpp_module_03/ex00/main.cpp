@@ -1,17 +1,27 @@
 #include "./src/ClapTrap.hpp"
 int main(){
-	ClapTrap trap("trap");
+	ClapTrap trap;
 	ClapTrap target("target");
+	ClapTrap kamil;
+	target = kamil;
 	trap.attack(target.getName());
 	trap.attack(target.getName());
 	trap.attack(target.getName());
-	target.takeDamage(1);
-	target.takeDamage(1);
-	target.takeDamage(1);
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	trap.attack(target.getName());
+	target.takeDamage(9);
 	std::cout << "Target Hitpoint :" <<  target.getHitPoints() << std::endl;
-	target.beRepaired(1);
-	target.beRepaired(1);
-	target.beRepaired(1);
-	target.beRepaired(1);
+	target.beRepaired(9);
+	std::cout << "Target Hitpoint :" <<  target.getHitPoints() << std::endl;
+	target.takeDamage(10);
+	std::cout << "Target Hitpoint :" <<  target.getHitPoints() << std::endl;
+	target.beRepaired(10);
 	std::cout << "Target Hitpoint :" << target.getHitPoints() << std::endl;
+	return 0;
 }

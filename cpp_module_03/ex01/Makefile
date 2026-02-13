@@ -1,4 +1,4 @@
-NAME=ex_one
+NAME=ScavTrap
 CXX=c++
 SRCS=main.cpp src/ClapTrap.cpp src/ScavTrap.cpp
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98

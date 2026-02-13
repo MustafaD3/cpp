@@ -22,4 +22,5 @@ class ClapTrap
 		int getHitPoints();
 		int getAttackDamage();
 };
+
 #endif
