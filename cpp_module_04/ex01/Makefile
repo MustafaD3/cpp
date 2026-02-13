@@ -1,0 +1,15 @@
+NAME=brain
+CXX=c++
+SRCS=main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp src/Brain.cpp
+CXXFLAGS=-Wall -Wextra -Werror -std=c++98
+OBJS=$(SRCS:.cpp=.o)
+
+all:$(NAME)
+$(NAME):$(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+re:fclean all
+clean:
+	rm -f $(OBJS)
+fclean:clean
+	rm -f $(NAME)
+.PHONY:all re clean fclean
