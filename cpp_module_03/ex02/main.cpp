@@ -1,4 +1,4 @@
-#include "src/FragTrap.hpp"
+#include "FragTrap.hpp"
 int main(){
 	FragTrap trap;
 	FragTrap target("Target");

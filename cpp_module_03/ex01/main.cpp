@@ -1,5 +1,4 @@
-#include "./src/ClapTrap.hpp"
-#include "./src/ScavTrap.hpp"
+#include "ScavTrap.hpp"
 int main(){
 	ScavTrap *trap = new ScavTrap();
 	ScavTrap target("target");

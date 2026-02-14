@@ -1,6 +1,6 @@
 NAME=ScavTrap
 CXX=c++
-SRCS=main.cpp src/ClapTrap.cpp src/ScavTrap.cpp
+SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98
 OBJS=$(SRCS:.cpp=.o)
 
