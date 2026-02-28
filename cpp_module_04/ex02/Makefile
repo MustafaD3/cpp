@@ -1,6 +1,6 @@
-NAME=polymorphism
+NAME=abstract
 CXX=c++
-SRCS=main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS=main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98
 OBJS=$(SRCS:.cpp=.o)
 

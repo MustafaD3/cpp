@@ -1,6 +1,6 @@
 NAME=brain
 CXX=c++
-SRCS=main.cpp src/Animal.cpp src/Dog.cpp src/Cat.cpp src/Brain.cpp
+SRCS=main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98
 OBJS=$(SRCS:.cpp=.o)
 

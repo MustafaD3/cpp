@@ -1,6 +1,6 @@
-#include "src/Cat.hpp"
-#include "src/Dog.hpp"
-#include "src/WrongCat.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongCat.hpp"
 int main()
 {
 	{

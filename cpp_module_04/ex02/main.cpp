@@ -5,7 +5,7 @@ int main()
 	std::cout << "-----Array Test-----" << std::endl;
 	{
 		int n = 10;
-		const Animal *lotsOfAnimals[n];
+		const AAnimal *lotsOfAnimals[n];
 
 		for (int i = 0; i < n; i++)
 		{
@@ -40,5 +40,4 @@ int main()
 		delete dog;
 		delete dog2;
 	}
-	
 }
